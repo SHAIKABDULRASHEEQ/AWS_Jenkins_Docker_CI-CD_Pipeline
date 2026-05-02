@@ -15,29 +15,28 @@ pipeline {
             }
         }
 
-        stage('Remove Old Container') {
+        stage('Save Image') {
             steps {
-                sh '''
-                docker stop devops-container || true
-                docker rm devops-container || true
-                '''
+                sh 'docker save devops-app:latest -o devops-app.tar'
             }
         }
 
-        stage('Run New Container') {
+        stage('Copy Image to App Server') {
             steps {
-                sh '''
-                docker run -d \
-                --name devops-container \
-                -p 5000:5000 \
-                devops-app:latest
-                '''
+                sh 'scp -o StrictHostKeyChecking=no devops-app.tar ec2-user@56.125.218.48:/home/ec2-user/'
             }
         }
 
-        stage('Health Check') {
+        stage('Deploy on App Server') {
             steps {
-                sh 'docker ps'
+                sh '''
+                ssh -o StrictHostKeyChecking=no ec2-user@56.125.218.48 "
+                docker load -i /home/ec2-user/devops-app.tar &&
+                docker stop devops-container || true &&
+                docker rm devops-container || true &&
+                docker run -d --name devops-container -p 5000:5000 devops-app:latest
+                "
+                '''
             }
         }
     }
