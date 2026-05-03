@@ -82,3 +82,43 @@ scp devops-app.tar ec2-user@server:/home/ec2-user/
 ssh ec2-user@server
 docker load -i devops-app.tar
 docker run -d -p 5000:5000 devops-app
+
+---
+
+
+## Immediately BELOW that paste this:
+
+```md id="u7p1wc"
+---
+
+## Results
+
+- Automated deployment workflow
+- Faster release cycle
+- Repeatable container deployments
+- Improved CI/CD understanding
+
+---
+
+## Key Learnings
+
+- Jenkins pipeline stages
+- Docker image lifecycle
+- SSH deployment automation
+- Linux troubleshooting
+
+---
+
+## Future Enhancements
+
+- Push images to AWS ECR
+- Add rollback stage
+- Add testing stage
+- Deploy to Kubernetes
+
+---
+
+## Author
+
+Shaik Abdul Rasheeq  
+Cloud / DevOps Engineer
