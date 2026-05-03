@@ -85,36 +85,26 @@ docker run -d -p 5000:5000 devops-app
 
 ---
 
-That closes the code block.
+Results
 
-## Results
+Automated deployment workflow
+Faster release cycle
+Repeatable container deployments
+Improved CI/CD understanding
 
-- Automated deployment workflow
-- Faster release cycle
-- Repeatable container deployments
-- Improved CI/CD understanding
+Key Learnings
 
----
+Jenkins pipeline stages
+Docker image lifecycle
+SSH deployment automation
+Linux troubleshooting
+Future Enhancements
+Push images to AWS ECR
+Add rollback stage
+Add testing stage
+Deploy to Kubernetes
 
-## Key Learnings
+Author
 
-- Jenkins pipeline stages
-- Docker image lifecycle
-- SSH deployment automation
-- Linux troubleshooting
-
----
-
-## Future Enhancements
-
-- Push images to AWS ECR
-- Add rollback stage
-- Add testing stage
-- Deploy to Kubernetes
-
----
-
-## Author
-
-Shaik Abdul Rasheeq  
+Shaik Abdul Rasheeq
 Cloud / DevOps Engineer
