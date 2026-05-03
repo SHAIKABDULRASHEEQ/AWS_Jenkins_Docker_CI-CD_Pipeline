@@ -85,10 +85,6 @@ docker run -d -p 5000:5000 devops-app
 
 ---
 
-
-## Immediately BELOW that paste this:
-
-```md id="u7p1wc"
 ---
 
 ## Results
